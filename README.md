@@ -15,7 +15,7 @@ This is a fully functional e-commerce web application built with Vue 3, Pinia, F
 
 ## Technologies Used
 - **Frontend:** Vue 3, Pinia, Vue Router, TypeScript
-- **UI Framework:** Bulma
+- **UI Framework:** Bulma, Vue Sonner
 - **Authentication:** Firebase Authentication
 - **State Management:** Pinia
 - **Database:** Firebase Firestore
