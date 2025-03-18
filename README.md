@@ -52,18 +52,42 @@ service cloud.firestore {
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/dundunek1/E-Commerce-Web-Application.git
+   cd E-Commerce-Web-Application
    ```
 2. Install dependencies:
    ```sh
    npm install
    ```
-3. Run the development server:
+3. Install Firebase and Firebase SDK: You need to install Firebase to handle authentication and database functionality. Run the following command:
+   ```sh
+   npm install firebase
+   ```
+4. Set up Firebase in your project:
+
+   Go to Firebase Console, create a new Firebase project, or use an existing one.
+   Enable Firebase Authentication and Firebase Firestore for your project.
+   Copy your Firebase configuration (API key, project ID, etc.) from your Firebase Console.
+
+5. Edit Firebase Configuration:
+   Open the src/firebaseConfig.ts
+   Replace the placeholder values with your Firebase project credentials (from step 4). It should look like this:
+   ```sh
+   const firebaseConfig = {
+    apiKey: '<YOUR_API_KEY>',
+    authDomain: '<YOUR_AUTH_DOMAIN>',
+    databaseURL: '<YOUR_DATABASE_URL>',
+    projectId: '<YOUR_PROJECT_ID>',
+    storageBucket: '<YOUR_STORAGE_BUCKET>',
+    messagingSenderId: '<YOUR_MESSAGING_SENDER_ID>',
+    appId: '<YOUR_APP_ID>',
+    measurementId: '<YOUR_MEASUREMENT_ID>',
+    }
+   ```
+  6. Run the development server:
    ```sh
    npm run dev
    ```
-
 ## Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
