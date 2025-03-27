@@ -23,28 +23,20 @@ This is a fully functional e-commerce web application built with Vue 3, Pinia, F
 ## Firestore Security Rules
 To ensure data security, the following Firestore rules are applied:
 ```javascript
+
+rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Rules for groups
-    match /groups/{groupId} {
-      allow read: if true;  // Anyone can read groups
-      allow create: if request.auth != null; // Only authenticated users can create groups
-      allow update: if request.auth != null && request.resource.data.members != null && request.auth.uid != null; // Users can add themselves to a group (pendingMembers)
-      allow delete: if request.auth != null && request.resource.data.owner == request.auth.uid; // Only the group owner can delete
+
+    match /orders/{orderId} {
+      allow read, write: if request.auth != null;
     }
 
-    // Rules for users
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
 
-    // Rules for tasks
-    match /tasks/{taskId} {
-      allow read: if request.auth != null; // Any authenticated user can read tasks
-      allow create: if request.auth != null; // Any authenticated user can create tasks
-      allow update, delete: if request.auth != null; // Any authenticated user can update and delete tasks
-    }
   }
 }
 ```
