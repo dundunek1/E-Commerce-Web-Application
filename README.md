@@ -55,7 +55,7 @@ This is a fully functional e-commerce web application built with Vue 3, Pinia, F
     measurementId: '<YOUR_MEASUREMENT_ID>',
     }
    ```
-  6. Run the development server:
+6. Run the development server:
    ```sh
    npm run dev
    ```
