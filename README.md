@@ -20,27 +20,6 @@ This is a fully functional e-commerce web application built with Vue 3, Pinia, F
 - **State Management:** Pinia
 - **Database:** Firebase Firestore
 
-## Firestore Security Rules
-To ensure data security, the following Firestore rules are applied:
-```javascript
-
-rules_version = '2';
-
-service cloud.firestore {
-  match /databases/{database}/documents {
-
-    match /orders/{orderId} {
-      allow read, write: if request.auth != null;
-    }
-
-    match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-
-  }
-}
-```
-
 ## Installation
 1. Clone the repository:
    ```sh
